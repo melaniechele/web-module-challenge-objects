@@ -68,8 +68,8 @@ console.log(reviews[5].feedback);
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
 
-reviews.push({name: "Melanie", ratings: 3, feedback: "So-so"});
-console.log(reviews);
+// reviews.push({name: "Melanie", ratings: 3, feedback: "So-so"});
+// console.log(reviews);
 
 /* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays" */
 
@@ -89,12 +89,9 @@ and should return a string in the format `{name} gave the restaurant a {rating},
  * it will return `Daniela gave the restaurant a 5 star review and their feedback was: Beautiful atmosphere and wonderful vegan options!`
 */
 function getReviewByIndex(reviews, index) {
-    for ( i = 0 ; i < reviews.lenght ; i++){
-      if (reviews === reviews[i]){
-        return (name + "gave the restaurant a" + rating + "star review and their feedback was" + feedback);
+   return reviews[index].name + " gave the restaurant a " + reviews[index].rating + " star review and their feedback was " + reviews[index].feedback;
       }
-    }
-  }
+  
 
   console.log(getReviewByIndex(reviews, 5));
   
@@ -108,11 +105,13 @@ and should return a string in the format `name} gave the restaurant a {rating}, 
 
 For example, if getLastReview is invoked passing the reviews array it will return `Reyna gave the restaurant a 3.5 star review and their feedback was: "this place is chill with really cool people, great for getting work done on weekdays"`.
 */
-function getLastReview(/* code here */) {
-    /* code here */
-  } 
+function getLastReview(objectArray) {
+
+  return objectArray.slice(-1)[0].name + " gave the restaurant a " + objectArray.slice(-1)[0].rating + " star review and their feedback was " + objectArray.slice(-1)[0].feedback;
 
 
+}
+console.log(getLastReview(reviews));
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
 /** STRETCH 1: Write a function called `getReviewByRating` that returns an array containing all reviews in a certain range. Your function should accept: 
